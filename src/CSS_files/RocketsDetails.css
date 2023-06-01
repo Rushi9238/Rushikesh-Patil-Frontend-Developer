@@ -1,0 +1,70 @@
+.rocketsDetails{
+     border: 2px solid blue;
+     height: 180%;
+     width: 100%;
+     background-color: black;
+}
+.rocketsDetails img{
+    /* align-self: center; */
+    height: 45%;
+    width: 95%;
+    padding: 2rem 5rem;
+   
+}
+.rocketsDetails button {
+    margin:1rem 3rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
+.rocketsDetails .modal-footer{
+    height: 50%;
+    color: white;
+    /* border: 2px solid red; */
+}
+.rocketsDetails .modal-footer .row{
+    display: flex;
+    height: 70%;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    padding-left: 3rem;
+}
+.rocketsDetails .modal-footer .row .col-sm-4{
+    /* border: 2px solid green; */
+    width: 30%;
+    margin: 1rem;
+    padding-left: 1;  
+}
+.rocketsDetails .modal-footer .row .col-sm-4 h4{
+    font-size: 2rem;
+    font-family: 'D-DIN-Bold', Arial, Verdana, sans-serif;
+    text-shadow: 0 0 2px #555;
+    
+}
+.rocketsDetails .modal-footer .row .col-sm-4 p{
+    color: gray;
+    padding-top: 1rem;
+    font-family: 'D-DIN-Bold', Arial, Verdana, sans-serif;
+}
+.rocketsDetails .modal-footer h3{
+    font-size: 1.3rem;
+    padding-left: 3rem;
+    padding-top: 1rem;
+   width: 90%;
+   font-weight: 100;
+    /* padding-bottom: 1rem; */
+    
+}
+ 
+.rocketsDetails .modal-footer .btn{
+    position: absolute;
+    right: 1rem;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    
+    border: 1.5px solid white;
+    
+}
