@@ -4,9 +4,8 @@ const Header = () => {
   return (
     <>
     <div className='header'>
-        <h1> Rocket Spacex</h1>
+        <h1> 🚀Rocket Spacex</h1>
         <div className="menuBar">
-            <button>click</button>
         </div>
         </div>
     </>

@@ -1,13 +1,23 @@
 .header{
     height: 10%;
     width: 100%;
-    border: 2px solid green;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    color: white;
 }
 .header h1{
     width: 70%;
-    
+    font-size: 2.4rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+@media only screen and (min-width:319px) and (max-width:560px){
+    .header h1{
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width:318px){
+    .header h1{
+        font-size: 1.5rem;
+    }
 }

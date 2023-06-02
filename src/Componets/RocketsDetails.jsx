@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import '../CSS_files/RocketsDetails.css'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 const RocketsDetails = () => {
     const navigate=useNavigate()
     const {rocket_id}=useParams()
-    // console.log(rocket_id);
     const[rocketDetails,setRocketDetails] =useState()
     useEffect(()=>{
         async function fetchUsers() {
             try {
               const api = await fetch(`https://api.spacexdata.com/v3/rockets/${rocket_id}`);
               const respo = await api.json();
-            //   console.log(respo);
               setRocketDetails(respo)
-            //   dispatch(getRocketsData(respo))
             } catch (error) {
               console.error("Data Not fetching plaese wait or refersh the page:", error);
             }
@@ -23,15 +22,63 @@ const RocketsDetails = () => {
     console.log(rocketDetails);
   return (
     <div className='rocketsDetails'>
-        {/* <img src={rocketDetails && rocketDetails.flickr_images[1]} alt="" />
-    <h1>{rocketDetails.rocket_name}</h1> */}
-    {/* {console.log(rocketDetails)} */}
 <button onClick={()=>{
     navigate('/')
 }}> 👈🏻 BACK TO ROCKETS </button>
     {
         rocketDetails ? <>
-        <img src={rocketDetails.flickr_images[0]} alt="" />
+        <Carousel
+      additionalTransfrom={0}
+      arrows
+      autoPlay={true}
+      autoPlaySpeed={2000}
+      centerMode={false}
+      className=""
+      containerClass="container-with-dots"
+      dotListClass=""
+      draggable
+      focusOnSelect={false}
+      infinite
+      itemClass=""
+      keyBoardControl
+      minimumTouchDrag={80}
+      renderButtonGroupOutside={false}
+      renderDotsOutside={false}
+      responsive={{
+        desktop: {
+          breakpoint: {
+            max: 3000,
+            min: 1024
+          },
+          items: 1,
+          partialVisibilityGutter: 40
+        },
+        mobile: {
+          breakpoint: {
+            max: 464,
+            min: 0
+          },
+          items: 1,
+          partialVisibilityGutter: 30
+        },
+        tablet: {
+          breakpoint: {
+            max: 1024,
+            min: 464
+          },
+          items: 1,
+          partialVisibilityGutter: 30
+        }
+      }}
+      showDots={false}
+      sliderClass=""
+      slidesToSlide={1}
+      swipeable
+    >
+                {rocketDetails.flickr_images.map((ele)=>{
+                    return  <img className='carousel-item-padding-40-px' src={ele} alt="" />
+                })}
+              </Carousel>
         <div className="modal-footer">
         <div className='row'>
             <div className='col-sm-4'>
@@ -74,12 +121,8 @@ const RocketsDetails = () => {
         <h3>{rocketDetails.description}</h3>
         <a href={rocketDetails.wikipedia} target="_blank" ><button type="button" className="btn">Know More</button></a>
       </div>
-
         </> : ""
     }
-
-
-
     </div>
   )
 }
